@@ -1,6 +1,18 @@
 html {box-sizing: border-box;}
 
 
+body {
+    letter-spacing: 1px;
+    font-size: 14pt;
+
+}
+
+h1 {
+font-family: 'Mohave', sans-serif;
+letter-spacing: 4px;
+font-stretch: extra-expanded;
+}
+
 .profile-img {
   height: 20vh;
   width: auto;

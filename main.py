@@ -17,6 +17,7 @@ from flask_bootstrap import Bootstrap
 
 ################ INITS ##################
 app = Flask(__name__)
+Bootstrap(app)
 
 
 
