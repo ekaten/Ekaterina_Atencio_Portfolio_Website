@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, abort
 from flask_bootstrap import Bootstrap
+
 # from flask_ckeditor import CKEditor
 # from datetime import date
 # from werkzeug.security import generate_password_hash, check_password_hash
@@ -20,11 +21,33 @@ app = Flask(__name__)
 Bootstrap(app)
 
 
-
 ################ ROUTES ##################
+
+
 @app.route('/', methods=["GET", "POST"])
 def index():
     return render_template("index.html")
+
+
+@app.route('/about', methods=["GET", "POST"])
+def about():
+    return render_template("about.html")
+
+
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    return render_template("contact.html")
+
+
+@app.route('/projects', methods=["GET", "POST"])
+def projects():
+    return render_template("projects.html")
+
+
+@app.route('/skills', methods=["GET", "POST"])
+def skills():
+    return render_template("skills.html")
+
 
 
 
