@@ -1,5 +1,52 @@
 html {box-sizing: border-box;}
 
+/* ABOUT PAGE */
+
+#about-page {
+font-size: 0.8em;
+font-weight: 300;
+padding-bottom: 2rem;
+}
+
+#about-content {
+    height: 100%;
+    width: 50vw;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-right: 10vw;
+    margin-left: 5vw;
+    padding-bottom: 2rem;
+
+}
+
+.about-heading {
+    margin-top: 40px;
+    font-size: 1.25rem;
+}
+
+.about-institution-name {
+font-weight: 500;
+margin-bottom: 0 !important;
+}
+
+.about-h5 {
+    color: white;
+    font-weight: 400;
+    margin: 40px auto 20px auto;
+    border: solid black;
+    background: black;
+    border-radius: 10px;
+    width: 10rem;
+    padding: 10px 10px 10px 10px !important;
+}
+
+.about-list-item {
+    font-weight: 300;
+    font-size: 1.25rem;
+    padding-top: 20px;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+}
 
 body {
     letter-spacing: 1px;
@@ -18,51 +65,72 @@ font-stretch: extra-expanded;
   width: auto;
   border-radius: 50%;
 }
-#about-page {
-font-size: 0.8em;
-font-weight: 300;
-padding-bottom: 2rem;
+
+
+
+
+#skills-page {
+    font-size: 0.8em;
+    font-weight: 300;
+    padding-bottom: 2rem;
+    padding-top: 4rem;
 }
 
-#about-page h5 {
-font-size: 13pt;
-font-weight: 500;
-padding-top: 1rem;
-}
-
-#about-content {
-    height: 100%;
+#skills-content {
+    height: 100vh;
     width: 50vw;
-    margin-right: 10vw;
-    margin-left: 5vw;
+    margin-right: auto;
+    margin-left: auto;
     padding-bottom: 2rem;
 
-    box-shadow: 50px 5px 40px rgba(255, 255, 255, 80%);
-    background-color: rgba(255, 255, 255, 80%)
 }
-
 .head-medium {
 font-size: 1.9em;
 font-weight: 500;
-
 }
 
-.bold-italic-pt0 {
-font-style: italic;
-font-weight: 500;
+.list-group {
+    width: 70vw;
+    margin: auto;
 }
 
+.list-group-item {
+    font-weight: 300;
+    font-size: 1.25rem;
+    background: transparent !important;
+    border: none !important;
+    padding: 15px;
+}
+
+hr {
+  border: 7px dotted #D3DBDB;
+  border-bottom: none;
+  width: 4%;
+  margin: auto;
+}
+
+
+
+/* MEDIA RULES */
 
 @media (max-width: 700px) {
-    #about-content {
+    #about-content, #skills-content {
         width:90vw;
         margin-left: auto;
         margin-right: auto;
+        }
+    #skills-content {
+        box-shadow: -40px 5px 40px rgba(255, 255, 255, 80%);
+        background-color: rgba(255, 255, 255, 80%)
+    }
+    #about-content {
+        box-shadow: 50px 5px 40px rgba(255, 255, 255, 80%);
+        background-color: rgba(255, 255, 255, 80%)
     }
 }
 
 @media (max-width: 600px) {
-    #about-page {
+    #about-page, #skills-page {
         background-size: 90vw 80vh;
     }
 }
