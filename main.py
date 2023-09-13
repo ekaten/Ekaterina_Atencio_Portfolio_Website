@@ -49,6 +49,11 @@ def skills():
     return render_template("skills.html")
 
 
+@app.route('/morse', methods=['GET', "POST"])
+def morse():
+    return render_template("morse.html")
+
+
 
 
 ################ RUN ##################

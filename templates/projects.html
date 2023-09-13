@@ -8,9 +8,9 @@
 
 <div class="projects-banner container col-xxl-10" >
 
-              <div class="row flex-md-row-reverse align-items-center justify-content-center " style="height:40vh; max-width: 1800px; " >
+              <div class="row flex-md-row-reverse align-items-center justify-content-center " style="height:45vh; max-width: 1800px; " >
 
-              <div class="splash col-10 col-sm-3 col-md-6 col-lg-6 col-xl-7 align-items-center justify-content-center"  style=" padding: 7rem 2rem; background:transparent url('static/img/color-splash1-projects.png'); background-size: 100% 120%; background-position:center; background-repeat: no-repeat; height: 65%; width: 60%; min-height: 230px; min-width: 300px; max-width: 600px;   "></div>
+              <div class="splash col-10 col-sm-3 col-md-6 col-lg-6 col-xl-7 align-items-center justify-content-center"  style=" padding: 7rem 2rem; background:transparent url('static/img/color-splash1-projects.png'); background-size: 100% 120%; background-position:center; background-repeat: no-repeat; height: 65%; width: 60%; min-height: 230px; min-width: 270px; max-width: 600px;   "></div>
 
               <div class="col-md-4 col-lg-4 text-center">
                       <h1 class=" heading display-5 fw-bold text-body-emphasis lh-1 mt-2 mb-2">PROJECTS</h1>
@@ -23,33 +23,40 @@
 <!--  PROJECTS  -->
 
   <div class="projects-container container-fluid position-relative">
-  <div class="row">
-      <a href="https://medoc.ekaterinaatencio.com/"></a>
-          <div class="project col-12 col-lg-4 col-sm-6 text-bg-dark text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="project-heading display-5">MEDOC</h2>
-          <p class="project-description lead">Platform that allows patients conveniently store, edit and securely share medical
-history with providers.</p>
-        </div>
-        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  <div class="projects-row row">
+
+
+      <div class="project gradient-background col-12 col-md-6 col-lg-4 text-center overflow-hidden">
+          <a class="project-link" href="https://medoc.ekaterinaatencio.com/" target="_blank" >
+            <div class="project-description-div my-3 py-3">
+              <h2 class="project-description project-heading display-5">MEDOC</h2>
+              <p class="project-description lead">Platform allows patients to store, edit and securely share medical
+    history with providers.</p>
+            </div>
+            <div class="project-snap bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; ; background:transparent url('static/img/medoc.png'); background-size: 100% 120%; background-position:center; background-repeat: no-repeat;"></div>
+         </a>
+    </div>
+
+
+
+     <div class="project gradient-background col-12 col-md-6 col-lg-4  text-center overflow-hidden">
+         <a class="project-link" href="{{url_for('morse')}}" target="_blank" >
+            <div class="project-description-div my-3 py-3">
+              <h2 class="project-heading display-5">MORSE CODE CONVERTER</h2>
+              <p class="project-description lead">Convert inputed text into Morse Code and back.</p>
+            </div>
+            <div class="project-snap shadow-sm mx-auto" style="width: 80%; height: 300px;"></div>
+         </a>
       </div>
 
-
-
-     <div class="project col-12 col-lg-4 col-sm-6 text-bg-secondary text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="project-heading display-5">Text to Morse Code Converter</h2>
-          <p class="project-description lead">Convert inputed text into Morse Code and back.</p>
-        </div>
-        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-
-      <div class="project col-12 col-lg-4 col-sm-6 text-bg-light text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="project-heading display-5">Another headline</h2>
-          <p class="project-description lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      <div class="project gradient-background col-12 col-md-6 col-lg-4 text-center overflow-hidden">
+          <a class="project-link" href="https://medoc.ekaterinaatencio.com/" target="_blank" >
+            <div class="project-description-div my-3 py-3">
+              <h2 class="project-heading display-5">TIC TAC TOE</h2>
+              <p class="project-description lead">Portfolio Project.</p>
+            </div>
+            <div class="project-snap bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; "></div>
+          </a>
       </div>
 
     </div>
