@@ -21,7 +21,7 @@ padding-bottom: 2rem;
 
 .about-heading {
     margin-top: 40px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .about-institution-name {
@@ -42,7 +42,7 @@ margin-bottom: 0 !important;
 
 .about-list-item {
     font-weight: 300;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     padding-top: 20px;
     padding-bottom: 0px !important;
     margin-bottom: 0px;
@@ -50,7 +50,7 @@ margin-bottom: 0 !important;
 
 body {
     letter-spacing: 1px;
-    font-size: 14pt;
+    font-size: 1.5rem;
 
 }
 
@@ -96,7 +96,7 @@ font-weight: 500;
 
 .list-group-item {
     font-weight: 300;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     background: transparent !important;
     border: none !important;
     padding: 15px;
@@ -109,9 +109,38 @@ hr {
   margin: auto;
 }
 
+.projects-banner {
+    margin-top: 0 !important;
+}
+
+.projects-container {
+    width: calc(100vw - 64px);
+    padding: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project {
+    margin-right: 0 !important;
+    margin-bottom: 16px;
+    max-height: calc(100vw - 64px);
+}
+
+.project-heading {
+    font-family: 'Mohave', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 4px;
+    font-stretch: extra-expanded;
+}
 
 
 /* MEDIA RULES */
+
+@media (max-width: 770px) {
+    .projects-banner {
+        padding-bottom: 50px;
+    }
+}
 
 @media (max-width: 700px) {
     #about-content, #skills-content {
