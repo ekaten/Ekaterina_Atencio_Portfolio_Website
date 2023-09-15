@@ -1,3 +1,53 @@
 {% include "header.html" %}
-<h1> Contact Ekaterina</h1>
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+<div class="page-body">
+
+<!-- BANNER -->
+
+<div id="contact-page" class="container-fluid"  style="height: 30vh; background:transparent url('static/img/color-splash-contact.png'); background-size: 35vw 30vh; background-repeat: no-repeat; background-position-x: right; background-position-y: 90px; background-attachment: fixed; ">
+
+              <div id="contact-banner-content" class=" row flex-md-row-reverse align-items-center justify-content-center " style="height:30vh; max-width: 1800px;" >
+
+<div class=""></div>
+              <div class="col-md-4 col-lg-4 text-center">
+                  {% if form: %}
+                  <h1 class="heading display-5 fw-bold text-body-emphasis lh-1 mt-2 mb-2">CONTACT EKATERINA</h1>
+                  <p class="message lead mb-4" style="margin-top: 20px">Please, complete the from below</p>
+                  <p class="message lead mb-4" style="margin-top: 20px">to send a message</p>
+                  {% endif %}
+
+                  {% if success: %}
+                  <h1 class=" heading display-5 fw-bold text-body-emphasis lh-1 mt-2 mb-2">Message Sent</h1>
+                  <p class="message lead mb-4" style="margin-top: 20px">Thank you for reaching out!.</p>
+                  <p class="message lead mb-4" style="margin-top: 20px">I will get back to you as soon as possible.</p>
+                  <p class="message lead mb-4" style="margin-top: 20px"> - Ekaterina.</p>
+
+                  {% elif success == False: %}
+                  <h1 class=" heading display-5 fw-bold text-body-emphasis lh-1 mt-2 mb-2" style="color: red !important;">Oops! </h1>
+                  <p class="message lead mb-4" style="margin-top: 20px">Message couldn't be sent. Please, contact me via email at:</p>
+                  <p class="message lead mb-4" style="margin-top: 20px"><a href = "mailto: ekaterinaatencio@gmail.com">ekaterinaatencio@gmail.com</a></p>
+
+                  <p class="lead mb-4" style="margin-top: 20px"> - Ekaterina.</p>
+                  {% endif %}
+
+              </div>
+              </div>
+          </div>
+
+<!-- CONTACT FORM -->
+  <div class="contact-form container-fluid col-12 col-sm-8 col-lg-6 px-4 align-items-center justify-content-center">
+
+        {% if form: %}
+
+        {{ ckeditor.load() }}
+		{{ ckeditor.config(name="message") }}
+		{{ wtf.quick_form(form, novalidate=True, button_map={"send": "dark"}) }}
+
+        {% endif %}
+
+  </div>
+</div>
+
 {% include "footer.html" %}

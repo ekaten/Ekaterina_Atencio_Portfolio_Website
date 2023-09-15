@@ -5,17 +5,18 @@ html {box-sizing: border-box;}
 #about-page {
 font-size: 0.8em;
 font-weight: 300;
-padding-bottom: 2rem;
+padding-left: 0;
+padding-right: 0;
 }
 
 #about-content {
     height: 100%;
     width: 50vw;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
     margin-right: 10vw;
     margin-left: 5vw;
-    padding-bottom: 2rem;
+    padding-bottom: 2rem !important;
+    padding-top: 2rem;
 
 }
 
@@ -51,13 +52,46 @@ margin-bottom: 0 !important;
 body {
     letter-spacing: 1px;
     font-size: 1.5rem;
+    min-width: 277px;
+    min-height: 100vh;
+}
 
+
+
+.control-label{
+    color: grey;
+    font-family: 'Mohave', sans-serif;
+}
+
+#email, #name {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+.form-control{
+    --bs-border-radius: 0 !important;
+    border-radius: 0;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .heading {
 font-family: 'Mohave', sans-serif;
 letter-spacing: 4px;
 font-stretch: extra-expanded;
+}
+
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 .profile-img {
@@ -72,16 +106,16 @@ font-stretch: extra-expanded;
 #skills-page {
     font-size: 0.8em;
     font-weight: 300;
-    padding-bottom: 2rem;
-    padding-top: 4rem;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #skills-content {
-    height: 100vh;
     width: 50vw;
     margin-right: auto;
     margin-left: auto;
-    padding-bottom: 2rem;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
 
 }
 .head-medium {
@@ -92,6 +126,7 @@ font-weight: 500;
 .list-group {
     width: 70vw;
     margin: auto;
+    padding-top: 3rem !important;
 }
 
 .list-group-item {
@@ -109,13 +144,30 @@ hr {
   margin: auto;
 }
 
+.interests {
+    padding: 0 !important;
+}
+
+.message{
+    font-size: 1.5rem;
+    margin: 0 !important;
+}
+
+.page-body{
+    min-height: 77vh;
+
+    margin: 0 !important;
+
+}
 .projects-banner {
     margin-top: 0 !important;
 }
 
 .projects-container {
-    width: calc(100vw - 16px);
-    padding: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+
 }
 
 .projects-row {
@@ -124,14 +176,15 @@ hr {
 }
 
 .project {
-    max-height: 400px;
-    border: 8px solid white;
+    max-height: 420px;
+    border: 3px solid grey;
     padding: 0 !important;
+    margin: 10px;
     }
 
-.project-link {
+.project-link, .home-link {
     width: 100%;
-    height: 100%;
+    height: 110%;
     text-decoration: none;
     color: inherit;
 
@@ -140,11 +193,12 @@ hr {
 .project-description-div{
     height: 30%;
     width: 90%;
-    margin: auto;
+    margin: 20px auto !important;
 }
 
 .project-description {
     font-size: 1.1rem;
+    margin-bottom: 0 !important;
 }
 
 .project-heading {
@@ -156,73 +210,75 @@ hr {
 }
 
 .project-snap{
-    max-height: 60%;
-    margin-top: 10%;
-    margin-bottom: 0;
+    max-height: 55%;
+    width: auto;
+
 }
 
-/* ANIMATIONS */
+#send{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-.gradient-background {
-  background: linear-gradient(300deg, #DCDFE0, #FFFFFF, #DCDFE0);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+    font-size: 1rem;
+    letter-spacing: 2px;
+
 }
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 
 /* MEDIA RULES */
 
 @media (max-width: 770px) {
-    .projects-banner {
-        padding-bottom: 50px;
-        padding-top: 10px;
+    .splash {
+    margin-left: auto;
+    margin-right: auto;
     }
 
-    .project-snap {
-        margin-top: 40px;
-    }
+
 }
 
 @media (max-width: 700px) {
-    #about-content, #skills-content {
-        width:90vw;
-        margin-left: auto;
-        margin-right: auto;
+
+
+        #contact-banner-content {
+            background: linear-gradient(90deg, #FFFFFFDD, #FFFFFFDD 80%, #FFFFFF00)
         }
-    #skills-content {
-        box-shadow: -40px 5px 40px rgba(255, 255, 255, 80%);
-        background-color: rgba(255, 255, 255, 80%)
     }
-    #about-content {
-        box-shadow: 50px 5px 40px rgba(255, 255, 255, 80%);
-        background-color: rgba(255, 255, 255, 80%)
-    }
-}
+
 
 @media (max-width: 600px) {
-    #about-page, #skills-page {
-        background-size: 90vw 80vh;
+    #about-page, #skills-page #contact-page {
+        background-size: 90%;
     }
+
+    #skills-content  {
+    margin-left: 0 !important;
+    }
+
+    #about-content {
+        margin-left: 0 !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+
+    }
+
+    #about-content, #skills-content {
+        width:100% !important;
+        height: 100% !important;
+        background-color: #FFFFFFDD;
+        padding: 0 20px;
+        }
+
 }
 
 @media (max-width: 470px) {
     .project-snap {
-        height: 70%
+        height: 70%;
+        width: auto;
     }
 
 }
+
 
 @media (max-width: 330px) {
     .project {
@@ -233,6 +289,10 @@ hr {
     }
     .project-snap {
         display: none;
+    }
+
+    .page-heading {
+        font-size: 11vw;
     }
 
 
