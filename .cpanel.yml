@@ -5,10 +5,11 @@ deployment:
     - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio/
     - /bin/cp -R templates $DEPLOYPATH
     - /bin/cp -R node_module $DEPLOYPATH
+    - /bin/cp -R popperjs $DEPLOYPATH/templates/
+    - /bin/cp -R bootstrap $DEPLOYPATH/templates/
     - /bin/cp -R static $DEPLOYPATH
-    - /bin/cp -R flask_session $DEPLOYPATH
-    - /bin/cp -R __pycache__ $DEPLOYPATH
-    - /bin/cp -R .idea $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH/static
+    - /bin/cp -R img $DEPLOYPATH/static
     - /bin/cp main.py $DEPLOYPATH
     - /bin/cp package.json $DEPLOYPATH
     - /bin/cp package-lock.json $DEPLOYPATH
