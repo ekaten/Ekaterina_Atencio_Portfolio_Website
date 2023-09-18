@@ -4,7 +4,6 @@ import smtplib
 from flask_ckeditor import CKEditor
 from wtforms import StringField, SubmitField, PasswordField, TextAreaField, EmailField
 from wtforms.validators import DataRequired, Email
-from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 import datetime as dt
 
