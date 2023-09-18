@@ -7,6 +7,7 @@ from wtforms.validators import DataRequired, Email
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 import datetime as dt
+
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_sqlalchemy import SQLAlchemy
 # from sqlalchemy.orm import relationship
@@ -30,8 +31,8 @@ app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 ckeditor = CKEditor(app)
 
-################ FORM CLASSES ##############
 
+################ FORM CLASSES ##############
 
 
 class CreateContactForm(FlaskForm):
@@ -39,6 +40,7 @@ class CreateContactForm(FlaskForm):
     email = EmailField(validators=[DataRequired(), Email()])
     message = TextAreaField(validators=[DataRequired()])
     send = SubmitField('Send')
+
 
 ################ ROUTES ##################
 
@@ -84,8 +86,6 @@ def contact():
         return render_template("contact.html", form=form, year=year)
 
 
-
-
 @app.route('/projects', methods=["GET", "POST"])
 def projects():
     return render_template("projects.html", year=year)
@@ -101,9 +101,8 @@ def morse():
     return render_template("morse.html", year=year)
 
 
-
-
 ################ RUN ##################
 
+
 if __name__ == "__main__":
-    app.run(debug=True, port=9000)
+    app.run()

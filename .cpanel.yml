@@ -10,7 +10,7 @@ deployment:
     - /bin/cp -R static $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH/static
     - /bin/cp -R img $DEPLOYPATH/static
-    - /bin/cp main.py $DEPLOYPATH
+    - /bin/cp app.py $DEPLOYPATH
     - /bin/cp package.json $DEPLOYPATH
     - /bin/cp package-lock.json $DEPLOYPATH
     - /bin/cp requirements.txt $DEPLOYPATH
