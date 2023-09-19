@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+
     - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio
     - /bin/cp -R templates $DEPLOYPATH
     - /bin/cp -R node_module $DEPLOYPATH
