@@ -41,8 +41,6 @@
 
         {% if form: %}
 
-        {{ ckeditor.load() }}
-		{{ ckeditor.config(name="message") }}
 		{{ wtf.quick_form(form, novalidate=True, button_map={"send": "dark"}) }}
 
         {% endif %}

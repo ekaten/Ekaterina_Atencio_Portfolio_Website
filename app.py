@@ -64,7 +64,7 @@ def contact():
         sent_message = form.message.data
         try:
             with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-                my_email = "tenciokatya@gmail.com"
+                my_email = "atenciokatya@gmail.com"
                 pswd = "jyojeavwcxjrpxsw"
                 connection.starttls()
                 connection.login(user=my_email, password=pswd)
