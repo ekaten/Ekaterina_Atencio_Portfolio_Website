@@ -38,7 +38,7 @@ class CreateContactForm(FlaskForm):
     name = StringField(validators=[DataRequired()])
     email = EmailField(validators=[DataRequired(), Email()])
     message = TextAreaField(validators=[DataRequired()])
-    send = SubmitField('Send')
+    send = SubmitField(label='Send')
 
 
 ################ ROUTES ##################
@@ -64,7 +64,7 @@ def contact():
         sent_message = form.message.data
         try:
             with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-                my_email = "atenciokatya@gmail.com"
+                my_email = "aßtenciokatya@gmail.com"
                 pswd = "jyojeavwcxjrpxsw"
                 connection.starttls()
                 connection.login(user=my_email, password=pswd)
@@ -104,4 +104,4 @@ def morse():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, port=9000)

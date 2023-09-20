@@ -92,7 +92,9 @@ input:focus, input.form-control:focus {
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
+    color: transparent !important;
 }
+
 
 .profile-img {
   height: 20vh;
@@ -220,9 +222,9 @@ hr {
     padding-right: 1.5rem;
     margin-top: 20px;
     margin-bottom: 20px;
-
-    font-size: 1rem;
+    font-size: 1.2rem !important;
     letter-spacing: 2px;
+
 
 }
 
@@ -233,17 +235,9 @@ hr {
     margin-left: auto;
     margin-right: auto;
     }
-
-
 }
 
-@media (max-width: 700px) {
-
-
-        #contact-banner-content {
-            background: linear-gradient(90deg, #FFFFFFDD, #FFFFFFDD 80%, #FFFFFF00)
-        }
-    }
+@media (max-width: 700px) {}
 
 
 @media (max-width: 600px) {
@@ -262,12 +256,17 @@ hr {
 
     }
 
-    #about-content, #skills-content {
+    #about-content, #skills-content, #contact-page {
         width:100% !important;
         height: 100% !important;
-        background-color: #FFFFFFDD;
+        background-color: #FFFFFFDD !important;
         padding: 0 20px;
         }
+
+
+}
+
+@media (min-width: 576px) {
 
 }
 
