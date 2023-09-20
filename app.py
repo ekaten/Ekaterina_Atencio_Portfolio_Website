@@ -60,25 +60,24 @@ def contact():
     if form.validate_on_submit():
         print('Submitted')
         sender = form.name.data
-        semder_email = form.email.data
+        sender_email = form.email.data
         sent_message = form.message.data
         try:
             with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
                 my_email = "atenciokatya@gmail.com"
-                pswd = "jyojeavwcxjrpxsw"
+                pswd = "cyvx pjzu knpp axuy"
                 connection.starttls()
                 connection.login(user=my_email, password=pswd)
                 connection.sendmail(
                     from_addr=my_email,
                     to_addrs="ekaterinaatencio@gmail.com",
-                    msg=f'Subject: {sender} sent you a message\n\n{sent_message}\n\n{sender}\n{semder_email}'
+                    msg=f'Subject: {sender} sent you a message\n\n{sent_message}\n\n{sender}\n{sender_email}'
                 )
-        except:
-            print("Message couldn't be sent")
+        except Exception as exc:
+            print(exc)
             success = False
         else:
             success = True
-            message = "Thank you for reaching out!\nI will get back to you as soon as possible\n-Ekaterina Atencio"
 
         return render_template("contact.html", success=success, year=year)
     else:
