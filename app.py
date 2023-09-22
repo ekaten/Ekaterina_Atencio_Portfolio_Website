@@ -94,10 +94,6 @@ def skills():
     return render_template("skills.html", year=year)
 
 
-@app.route('/morse', methods=['GET', "POST"])
-def morse():
-    return render_template("morse.html", year=year)
-
 
 ################ RUN ##################
 
