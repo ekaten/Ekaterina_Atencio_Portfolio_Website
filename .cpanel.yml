@@ -1,7 +1,6 @@
 ---
 deployment:
   tasks:
-
     - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio/
     - /bin/cp app.py $DEPLOYPATH
     - /bin/cp package.json $DEPLOYPATH
