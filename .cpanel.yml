@@ -1,11 +1,11 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio
-    - /bin/cp app.py $DEPLOYPATH
-    - /bin/cp package.json $DEPLOYPATH
-    - /bin/cp package-lock.json $DEPLOYPATH
-    - /bin/cp requirements.txt $DEPLOYPATH
-    - /bin/cp -R node_modules $DEPLOYPATH
-    - /bin/cp -R static $DEPLOYPATH
-    - /bin/cp -R templates $DEPLOYPATH
+    - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio/
+    - cp app.py $DEPLOYPATH
+    - cp package.json $DEPLOYPATH
+    - cp package-lock.json $DEPLOYPATH
+    - cp requirements.txt $DEPLOYPATH
+    - cp -R node_modules $DEPLOYPATH
+    - cp -R static $DEPLOYPATH
+    - cp -R templates $DEPLOYPATH
