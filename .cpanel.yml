@@ -6,6 +6,6 @@ deployment:
     - /bin/cp package.json $DEPLOYPATH
     - /bin/cp package-lock.json $DEPLOYPATH
     - /bin/cp requirements.txt $DEPLOYPATH
-    - /bin/cp -R node_module $DEPLOYPATH
-    - /bin/cp -R static $DEPLOYPATH
-    - /bin/cp -R templates $DEPLOYPATH
+    - /bin/cp -r node_module $DEPLOYPATH
+    - /bin/cp -r static $DEPLOYPATH
+    - /bin/cp -r templates $DEPLOYPATH
