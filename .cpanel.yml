@@ -4,6 +4,7 @@ deployment:
     - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio/
     - cp app.py $DEPLOYPATH
     - cp package.json $DEPLOYPATH
+    - cp morse.py $DEPLOYPATH
     - cp package-lock.json $DEPLOYPATH
     - cp requirements.txt $DEPLOYPATH
     - cp -R node_modules $DEPLOYPATH
