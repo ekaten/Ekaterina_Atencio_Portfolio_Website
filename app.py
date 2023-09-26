@@ -8,6 +8,8 @@ from flask_wtf import FlaskForm
 import datetime as dt
 from morse import encode, decode, CreateConverterForm, is_morse
 
+import os
+
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_sqlalchemy import SQLAlchemy
 # from sqlalchemy.orm import relationship
@@ -22,6 +24,8 @@ from morse import encode, decode, CreateConverterForm, is_morse
 
 now = dt.datetime.now()
 year = now.year
+
+
 
 ################ INITS ##################
 app = Flask(__name__)
@@ -110,6 +114,7 @@ def morse_converter():
         return render_template("morse.html", year=year, form=form, output=output)
     else:
         return render_template("morse.html", year=year, form=form, output=output)
+
 
 ################ RUN ##################
 
