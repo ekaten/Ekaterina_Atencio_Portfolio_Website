@@ -10,9 +10,9 @@ def compress(path, img_name):
     width, height = image.size
     size_kb = os.path.getsize(file_path)
     new_size = ()
-    if size_kb < 700000:
+    if size_kb < 400000:
         new_size = (width - 50, height - 50)
-    if size_kb >= 700000:
+    if size_kb >= 400000:
         new_size = (width // 2, height // 2)
 
     resized_image = image.resize(new_size)
@@ -30,12 +30,12 @@ for item in img_directory:
     try:
         with Image.open(f'{PATH}/{item}') as img:
             size = os.path.getsize(f'{PATH}/{item}')
-            if size > 300000:
+            if size > 100000:
                 images.append(item)
     except OSError:
         pass
 print(images)
 
 for img in images:
-    while os.path.getsize(f'{PATH}/{img}') > 300000:
+    while os.path.getsize(f'{PATH}/{img}') > 100000:
         compress(PATH, img)
