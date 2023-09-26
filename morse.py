@@ -48,15 +48,6 @@ MORSE_CODE = {
     "0": '-----',
     " ": '/'}
 
-################ APP INITS ##################
-
-app = Flask(__name__)
-app.secret_key = "sdkfgnslkdfnslkdfndf"
-Bootstrap(app)
-
-
-################ FORM CLASSES ##############
-
 
 class CreateConverterForm(FlaskForm):
     input = TextAreaField(label="", validators=[DataRequired()], render_kw={"placeholder": "Input:"})
@@ -108,8 +99,3 @@ def decode(input_text):
     return decoded_word
 
 
-################ ROUTES ##################
-
-
-
-app.run(debug=True, port=2000)
