@@ -95,7 +95,7 @@ def skills():
     return render_template("skills.html", year=year)
 
 
-@app.route('/morse', methods=["GET", "POST"])
+@app.route('/morse-code', methods=["GET", "POST"])
 def morse_converter():
     output = ""
     form = CreateConverterForm()
@@ -115,4 +115,4 @@ def morse_converter():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=9000)
