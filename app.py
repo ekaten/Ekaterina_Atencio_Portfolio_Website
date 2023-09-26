@@ -6,6 +6,7 @@ from wtforms import StringField, SubmitField, PasswordField, TextAreaField, Emai
 from wtforms.validators import DataRequired, Email
 from flask_wtf import FlaskForm
 import datetime as dt
+from morse import encode, decode, CreateConverterForm, is_morse
 
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_sqlalchemy import SQLAlchemy
@@ -94,6 +95,21 @@ def skills():
     return render_template("skills.html", year=year)
 
 
+@app.route('/morse', methods=["GET", "POST"])
+def morse():
+    output = ""
+    form = CreateConverterForm()
+    if form.validate_on_submit():
+        print("Success")
+        input_text = form.input.data
+        # Check if input is text or morse code
+        if is_morse(input_text):
+            output = decode(input_text)
+        else:
+            output = encode(input_text)
+        return render_template("morse.html", year=year, form=form, output=output)
+    else:
+        return render_template("morse.html", year=year, form=form, output=output)
 
 ################ RUN ##################
 
