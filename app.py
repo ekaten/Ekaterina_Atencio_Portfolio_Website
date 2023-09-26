@@ -96,7 +96,7 @@ def skills():
 
 
 @app.route('/morse', methods=["GET", "POST"])
-def morse():
+def morse_converter():
     output = ""
     form = CreateConverterForm()
     if form.validate_on_submit():
