@@ -51,19 +51,43 @@
       <div class="collapse navbar-collapse justify-content-sm-center" style="text-align: center; justify-content: end !important;" id="navbarsExample04">
         <ul class="navbar-nav mr-auto" style="font-size: 1.4rem;">
           <li class="nav-item active">
-            <a class="nav-link  text-secondary" href={{url_for('index')}}>Home <span class="sr-only"></span></a>
+            {% if request.path == '/' %}
+              <a class="nav-link" style="font-weight: 600;" href={{url_for('index')}}>Home <span class="sr-only"></span></a>
+            {% else %}
+              <a class="nav-link  text-secondary" href={{url_for('index')}}>Home <span class="sr-only"></span></a>
+            {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: #1C0042; font-weight: 500;" href={{url_for('projects')}}>Projects</a>
+              {% if request.path == '/projects' %}
+                <a class="nav-link" style="font-weight: 600;"  href={{url_for('projects')}}>Projects</a>
+              {% else %}
+                <a class="nav-link text-secondary"  href={{url_for('projects')}}>Projects</a>
+              {% endif %}
+
           </li>
+
             <li class="nav-item">
-            <a class="nav-link text-dark" href={{url_for('about')}}>About</a>
+                {% if request.path == '/about' %}
+                    <a class="nav-link" style="font-weight: 600;" href={{url_for('about')}}>About</a>
+                {% else %}
+                    <a class="nav-link text-secondary" href={{url_for('about')}}>About</a>
+                {% endif %}
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href={{url_for('skills')}}>Skills</a>
+              {% if request.path == '/skills' %}
+                <a class="nav-link" style="font-weight: 600;" href={{url_for('skills')}}>Skills</a>
+              {% else %}
+                <a class="nav-link text-secondary" href={{url_for('skills')}}>Skills</a>
+              {% endif %}
+
           </li>
             <li class="nav-item">
-            <a class="nav-link text-dark" href={{url_for('contact')}}>Contact</a>
+                {% if request.path == '/contact' %}
+                <a class="nav-link" style="font-weight: 600;" href={{url_for('contact')}}>Contact</a>
+              {% else %}
+                <a class="nav-link text-secondary" href={{url_for('contact')}}>Contact</a>
+              {% endif %}
+
           </li>
 <!--          <li class="nav-item dropdown">-->
 <!--            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>-->
