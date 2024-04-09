@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ekatzgmo/MyPortfolio/
+    - export DEPLOYPATH=/home/ekatiuvs/Portfolio/
     - cp app.py $DEPLOYPATH
     - cp package.json $DEPLOYPATH
     - cp morse.py $DEPLOYPATH
