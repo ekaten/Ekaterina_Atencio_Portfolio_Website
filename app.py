@@ -3,10 +3,13 @@ from flask_bootstrap import Bootstrap
 import smtplib
 from flask_ckeditor import CKEditor
 from wtforms import StringField, SubmitField, PasswordField, TextAreaField, EmailField
+from flask_wtf.recaptcha import RecaptchaField
 from wtforms.validators import DataRequired, Email
 from flask_wtf import FlaskForm
 import datetime as dt
 from morse import encode, decode, CreateConverterForm, is_morse
+from config import Config
+
 
 import os
 
@@ -22,9 +25,10 @@ import os
 # from functools import wraps
 # import os
 
+
+
 now = dt.datetime.now()
 year = now.year
-
 
 
 ################ INITS ##################
@@ -34,6 +38,7 @@ Bootstrap(app)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 ckeditor = CKEditor(app)
+app.config.from_object(Config)
 
 
 ################ FORM CLASSES ##############
@@ -43,7 +48,9 @@ class CreateContactForm(FlaskForm):
     name = StringField(validators=[DataRequired()])
     email = EmailField(validators=[DataRequired(), Email()])
     message = TextAreaField(validators=[DataRequired()])
+    recaptcha = RecaptchaField()
     send = SubmitField(label='Send')
+
 
 
 ################ ROUTES ##################

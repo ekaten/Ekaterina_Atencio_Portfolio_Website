@@ -2,6 +2,11 @@
 
 {% import "bootstrap/wtf.html" as wtf %}
 
+{% block scripts %}
+   <!-- reCaptcha Integration -->
+   <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+{% endblock %}
+
 <div class="page-body" style="background:transparent url('static/img/color-splash-contact.png'); background-size: 300px 50vh; background-repeat: no-repeat; background-position-x: right; background-position-y: center; background-attachment: fixed;">
 
 <!-- BANNER -->
@@ -18,10 +23,10 @@
             <!-- CONTACT FORM -->
   <div class="contact-form container-fluid col-12 col-sm-8 col-lg-6 px-4 align-items-center justify-content-center">
 
+
+
         {% if form: %}
-
 		{{ wtf.quick_form(form, novalidate=True, button_map={"send": "dark"}) }}
-
         {% endif %}
 
   </div>
