@@ -38,7 +38,11 @@ Bootstrap(app)
 app.config['CKEDITOR_SERVE_LOCAL'] = True
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 ckeditor = CKEditor(app)
-app.config.from_object(Config)
+
+app.config['RECAPTCHA_USE_SSL'] = False
+app.config['RECAPTCHA_PUBLIC_KEY'] = Config.RECAPTCHA_PUBLIC_KEY
+app.config['RECAPTCHA_PRIVATE_KEY'] = Config.RECAPTCHA_PRIVATE_KEY
+app.config['RECAPTCHA_OPTIONS'] = {'theme': 'white'}
 
 
 ################ FORM CLASSES ##############
