@@ -11,7 +11,7 @@ from morse import encode, decode, CreateConverterForm, is_morse
 from config import Config
 
 
-import os
+
 
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_sqlalchemy import SQLAlchemy
