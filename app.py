@@ -26,7 +26,6 @@ from config import Config
 # import os
 
 
-
 now = dt.datetime.now()
 year = now.year
 
