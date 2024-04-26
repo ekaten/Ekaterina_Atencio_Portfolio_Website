@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, request, abort
+from flask import Flask, render_template, redirect, url_for, flash, request, abort, send_file
 from flask_bootstrap import Bootstrap
 import smtplib
 from flask_ckeditor import CKEditor
@@ -9,9 +9,6 @@ from flask_wtf import FlaskForm
 import datetime as dt
 from morse import encode, decode, CreateConverterForm, is_morse
 from config import Config
-
-
-
 
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_sqlalchemy import SQLAlchemy
@@ -29,6 +26,21 @@ from config import Config
 now = dt.datetime.now()
 year = now.year
 
+software_projects = [
+    ["WaterMarkMe",
+     "Add custom watermark text to image files.",
+     "static/file/WaterMarkMe.zip",
+     "static/file/WaterMarkMe_WIN.exe.zip",
+     ["/static/img/1.png",],
+     ],
+
+    ["Another Project",
+     "Another Project Here",
+     "",
+     "",
+     []
+     ]
+]
 
 ################ INITS ##################
 app = Flask(__name__)
@@ -39,6 +51,7 @@ app.config['CKEDITOR_PKG_TYPE'] = 'basic'
 ckeditor = CKEditor(app)
 
 app.config.from_object(Config)
+
 
 # app.config['RECAPTCHA_USE_SSL'] = False
 # app.config['RECAPTCHA_PUBLIC_KEY'] = Config.RECAPTCHA_PUBLIC_KEY
@@ -55,7 +68,6 @@ class CreateContactForm(FlaskForm):
     message = TextAreaField(validators=[DataRequired()])
     recaptcha = RecaptchaField()
     send = SubmitField(label='Send')
-
 
 
 ################ ROUTES ##################
@@ -101,9 +113,26 @@ def contact():
         return render_template("contact.html", form=form, year=year)
 
 
+@app.route('/<int:n>/<os>', methods=["GET"])
+def download(n, os):
+    if os == "m":
+        path = software_projects[n][2]
+    if os == "w":
+        path = software_projects[n][3]
+    else:
+        pass
+    return send_file(path, as_attachment=True)
+
+
 @app.route('/projects', methods=["GET", "POST"])
 def projects():
-    return render_template("projects.html", year=year)
+    return render_template("projects.html", year=year, projects=software_projects)
+
+
+@app.route('/<project_name>/<int:n>', methods=["GET"])
+def project_page(project_name,n):
+    project = software_projects[n]
+    return render_template("project_page.html", year=year, n=n, project=project)
 
 
 @app.route('/skills', methods=["GET", "POST"])
@@ -132,4 +161,4 @@ def morse_converter():
 
 
 if __name__ == "__main__":
-    app.run(port=3000)
+    app.run(port=4000)

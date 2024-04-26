@@ -1,0 +1,60 @@
+{% include "header.html" %}
+
+{% set m = "m" %}
+{% set w = "w" %}
+
+
+<div class="px-4 py-5 my-5 text-center">
+
+    <h1 class="heading display-5 fw-bold text-body-emphasis">{{project[0]}}</h1>
+    <div class="col-lg-6 mx-auto">
+
+        <p class="lead mb-4">{{project[1]}}</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center py-5">
+            <a class="btn btn-dark btn-lg px-4 gap-3" href="{{url_for('download', n=n, os=m)}}">Download for MAC</a>
+            <a class="btn btn-outline-dark btn-lg px-4" href="{{url_for('download', n=n, os=w)}}">Download for Windows</a>
+        </div>
+</div>
+
+<!--        PICTURE CAROUSEL-->
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide" style="margin-left: auto; margin-right: auto;padding-left: 5em; padding-right: 5em; padding-top: 2em; max-width:1000px ">
+
+              <div class="carousel-inner">
+
+                {% for picture in project[4] %}
+                  {% if loop.index == 1 %}
+                <div class="carousel-item active" style="">
+                    {% else %}
+                <div class="carousel-item " style="">
+                     {% endif %}
+                  <img src={{picture}} class="d-block w-100" alt="..." style="max-width: 800px">
+                </div>
+                {% endfor %}
+
+              </div>
+
+              {% if project[4] | length > 1 %}
+              <div class="carousel-indicators">
+                {% for picture in project[4] %}
+                  {% if loop.index == 1 %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{loop.index - 1}}" class="active" aria-current="true" aria-label="Slide {{loop.index}}"></button>
+                  {% else %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{loop.index - 1}}" aria-label="Slide {{loop.index}}"></button>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+                  {% endif %}
+        </div>
+    </div>
+
+
+{% include "footer.html" %}

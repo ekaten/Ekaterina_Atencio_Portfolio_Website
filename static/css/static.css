@@ -56,7 +56,10 @@ body {
     min-height: 100vh;
 }
 
+.carousel-indicators {
+    position: relative;
 
+    }
 
 .control-label{
     color: grey;
